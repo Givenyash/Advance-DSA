@@ -27,6 +27,7 @@ int main (){
     fourth -> next = NULL;
 
     cout<< first -> data <<" " << second -> data <<" " << third -> data <<" " << fourth -> data <<endl;
-    cout<< first -> next <<" " << second -> next <<" " << third -> next <<" " << fourth -> next;
-   return 0;
+    cout<< first -> next <<" " << second -> next <<" " << third -> next <<" " << fourth -> next <<endl;
+    cout<< first <<" " << second <<" " << third <<" " <<fourth;
+    return 0;
 }
