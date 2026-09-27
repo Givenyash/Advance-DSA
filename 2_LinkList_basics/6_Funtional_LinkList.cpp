@@ -4,6 +4,7 @@
 //created Functions of Linked List : push_front(), push_back(), pop_front() and pop_bacck().
 //created a function of printing the Linked List.
 //Insert a node in any specific place in the List.
+//Search the specific value in a LInked list.
 
 #include<bits/stdc++.h>
 using namespace std;
