@@ -3,6 +3,7 @@
 //initialized head and tail in with the NULL.
 //created Functions of Linked List : push_front(), push_back(), pop_front() and pop_bacck().
 //created a function of printing the Linked List.
+//Insert a node in any specific place in the List.
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -92,6 +93,51 @@ class List{
         cout<<"Deleted one node from back."<<endl;
     }
 
+    void insertSpecific(int val, int pos){
+        if(pos < 0){
+            cout<<"Invalid position"<<endl;
+            return;
+        }
+
+        if(pos == 0){
+            //push_front(val);
+            node* newNode = new node(val); 
+            if(head == NULL){
+                head = tail = newNode;
+                return;
+            }
+            newNode -> next = head;
+            head = newNode;
+            return;
+        }
+
+        node* temp = head;
+        for(int i=0; i<pos-1; i++){
+            if(temp == NULL){
+                cout<<"invalid position"<<endl;
+            }
+            temp = temp -> next;
+        }
+        node* newNode = new node(val);
+
+        newNode -> next = temp -> next;
+        temp -> next = newNode;
+    }
+
+    int search(int key){
+        node* temp = head;
+        int index = 0;
+
+        while(temp != NULL){
+            if(temp -> data == key){
+                return index;
+            }
+            temp = temp -> next;
+            index++;
+        }
+        return index;
+    }
+
     void print(){
         node* temp = head;
         while(temp != NULL){
@@ -110,12 +156,16 @@ int main (){
     ll.push_front(1);
     ll.push_front(2);
     ll.push_front(3);
-
     ll.push_back(4);
+
     ll.pop_front();
     ll.print();
 
     // ll.pop_back();
     // ll.print();
+    cout<<endl;
+    ll.insertSpecific(10,2);
+
+    cout<<"The key is found at "<<ll.search(10)<<" index";
    return 0;
 }
